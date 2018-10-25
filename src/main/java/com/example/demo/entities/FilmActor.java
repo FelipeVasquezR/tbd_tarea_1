@@ -5,10 +5,6 @@ import java.sql.Timestamp;
 
 import javax.persistence.*;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
-import net.minidev.json.annotate.JsonIgnore;
-
 @Entity
 @IdClass(FilmActorId.class)
 @Table(name = "film_actor")
