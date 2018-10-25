@@ -24,7 +24,7 @@ import com.example.demo.rest.IService;
 @RestController
 @RequestMapping("/actors")
 public class ControladorActor implements Serializable {
-
+//
 	@Autowired
 	private IService capaServicio;
 
