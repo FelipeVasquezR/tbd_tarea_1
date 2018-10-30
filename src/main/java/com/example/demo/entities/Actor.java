@@ -6,6 +6,10 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+
 @Entity
 @Table(name="actor")
 public class Actor implements Serializable{
@@ -25,8 +29,8 @@ public class Actor implements Serializable{
 
 	@Column(name="last_update")
 	private Timestamp lastUpdate;
-
 	
+	@JsonIgnore
 	@OneToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL}, mappedBy = "actor")
     private List<FilmActor> filmActor;
 	

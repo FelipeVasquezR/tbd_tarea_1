@@ -7,7 +7,7 @@ import java.util.Set;
 
 import javax.persistence.*;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "film")
@@ -57,7 +57,7 @@ public class Film implements Serializable{
 	private String last_update;
 	
 	
-	
+	@JsonIgnore
 	@OneToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL}, mappedBy = "film")
     private List<FilmActor> filmActor;
 	
