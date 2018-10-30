@@ -18,8 +18,8 @@ public class Actor implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="actor_id", unique=true, nullable=false)
-	private Long actorId;
+	@Column(name="actor_id", unique=true)
+	private Long actor_id;
 
 	@Column(name="first_name")
 	private String firstName;
@@ -40,11 +40,11 @@ public class Actor implements Serializable{
 	
 
 	public Long getActorId() {
-		return this.actorId;
+		return this.actor_id;
 	}
 
-	public void setActorId(Long actorId) {
-		this.actorId = actorId;
+	public void setActorId(Long id) {
+		this.actor_id = id;
 	}
 
 	public String getFirstName() {

@@ -24,7 +24,7 @@ import com.example.demo.rest.IService;
 @RestController
 @RequestMapping("/actors")
 public class ControladorActor implements Serializable {
-//
+	//
 	@Autowired
 	private IService capaServicio;
 
@@ -44,14 +44,16 @@ public class ControladorActor implements Serializable {
 	public List<Film> encontrarActorPorFilm(@PathVariable Long id) {
 		return capaServicio.encontrarFilmPorActor(id);
 	}
+	
+	//@Transactional
+	@PostMapping
+	public HttpStatus save(@RequestBody Actor actor) {
+		
+			capaServicio.save(actor);
+			return HttpStatus.OK;
 
-	// @PostMapping("/asdf/{id}")
-	// public HttpStatus save(@RequestBody Actor actor) {
-	// if(capaServicio.findActorById(actor.getActorId()).equals(null)) {
-	// capaServicio.save(actor);
-	// }
-	// return HttpStatus.OK;
-	// }
+		
+	}
 	//
 	// @GetMapping("/actor/{id}/film")
 	// public List<FilmActor> encontrarFilmPorActor(@PathVariable Long id) {
